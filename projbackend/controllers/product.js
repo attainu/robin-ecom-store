@@ -48,7 +48,7 @@ exports.createProduct = (req, res) => {
       product.photo.data = fs.readFileSync(file.photo.path);
       product.photo.contentType = file.photo.type;
     }
-    // console.log(product);
+    
 
     //save to the DB
     product.save((err, product) => {
@@ -92,7 +92,7 @@ exports.deleteProduct = (req, res) => {
   });
 };
 
-// delete controllers
+// update controllers
 exports.updateProduct = (req, res) => {
   let form = new formidable.IncomingForm();
   form.keepExtensions = true;
