@@ -48,6 +48,7 @@ exports.createProduct = (req, res) => {
       product.photo.data = fs.readFileSync(file.photo.path);
       product.photo.contentType = file.photo.type;
     }
+    // console.log(product);
 
     //save to the DB
     product.save((err, product) => {
@@ -162,7 +163,6 @@ exports.getAllUniqueCategories = (req, res) => {
     res.json(category);
   });
 };
-
 
 exports.updateStock = (req, res, next) => {
   let myOperations = req.body.order.products.map(prod => {

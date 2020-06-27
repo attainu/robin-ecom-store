@@ -8,9 +8,10 @@ const {
   photo,
   updateProduct,
   deleteProduct,
-  getAllProducts
+  getAllProducts,
+  getAllUniqueCategories
 } = require("../controllers/product");
-const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
+const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/authentication");
 const { getUserById } = require("../controllers/user");
 
 //all of params
@@ -51,6 +52,7 @@ router.put(
 
 //listing route
 router.get("/products", getAllProducts);
+
 router.get("/products/categories", getAllUniqueCategories);
 
 module.exports = router;
